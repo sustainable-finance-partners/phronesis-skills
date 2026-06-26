@@ -15,6 +15,15 @@ Agent-Skills-compatible clients.
   Phronesis for an **auditable action boundary** (`approve / review / block /
   seek-evidence / limit / require-human`) plus a **Decision Receipt**, *before* the action
   executes. Phronesis never executes the action.
+- **[`phronesis-decision-receipt`](phronesis-decision-receipt/SKILL.md)** — obtain, record,
+  and verify a **Decision Receipt**: the durable, auditable record of a consequential
+  decision (the action boundary, the basis it rested on, and a reference for later outcome
+  scoring). A Decision Receipt records the decision basis — it is not a guarantee of outcome.
+- **[`phronesis-mcp-control-path`](phronesis-mcp-control-path/SKILL.md)** — when an agent
+  operates through an MCP server, MCP portal, or identity provider, collect the
+  **control-path context** (verified identity, MCP/portal + tool, policy result, credential
+  scope, gateway/logs) to pass into the action-boundary call. Phronesis *consumes* this
+  context — it does not authenticate or authorize. *Valid access is not approval to act.*
 
 ## About Phronesis
 

@@ -40,4 +40,4 @@ money, or modifies identity; the calling agent and its principal retain the acti
   `/api/v1/signup`) is **forthcoming**.
 
 Operated by Sustainable Finance Partners, LLC. Not investment, legal, or other
-professional advice; no ratings or guarantees.
+professional advice; no ratings or guarantees. Support: support@phronesisintel.com

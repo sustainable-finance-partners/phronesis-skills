@@ -59,4 +59,5 @@ Phronesis decides **whether this proposed action is defensible enough to execute
 issues the Decision Receipt. Consume the access layer; don't rebuild it.
 
 _Phronesis — the decision-assurance layer. Operated by Sustainable Finance Partners, LLC.
-Not investment, legal, or other professional advice; no ratings or guarantees._
+Not investment, legal, or other professional advice; no ratings or guarantees.
+Support: support@phronesisintel.com_

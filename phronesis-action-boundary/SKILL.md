@@ -22,6 +22,11 @@ a rating, or a guarantee — the calling agent or human retains the action.
 > whether the action is **defensible enough to act** — and gives you the receipt to
 > prove it later. **Valid access is not approval to act.**
 
+> **Availability:** action-boundary scoring (`phronesis_score_action_boundary`) is
+> **forthcoming — not yet callable**. The live, callable `phronesis-hermes` tools today
+> are `health_check` and `bench_query` (public, read-only). This skill describes the
+> contract so you are ready when it ships.
+
 ## When to call this skill
 Call before any **consequential** action, e.g.:
 - moving money · payments · refunds · x402
@@ -43,14 +48,14 @@ Do **not** call for read-only / low-stakes actions (queries, drafts, retrieval).
 - `change_context` — for config/infra/code changes: diff, blast radius, owner, rollback plan
 - `decision_materiality` — how consequential the action is
 
-## How to call
+## How to call (when live — forthcoming)
 - **MCP server:** `phronesis-hermes` (Streamable-HTTP, `https://api.phronesisintel.com/mcp`).
-  The action-boundary tool is **principal-scoped** — get a free diligence-tier JWT at
-  `/api/v1/signup` and pass `Authorization: Bearer <JWT>`.
-- **Orientation, no signup (read-only, not the boundary call):** `bench_query` /
+  When live, the action-boundary tool will be **principal-scoped** — get a free
+  diligence-tier JWT at `/api/v1/signup` and pass `Authorization: Bearer <JWT>`.
+- **Available now (read-only orientation, not the boundary call):** `bench_query` /
   `GET https://api.phronesisintel.com/.well-known/bench.json`.
-- Send the collected context → receive `{ action_boundary, reason, evidence_maturity,
-  decision_receipt, ... }`.
+- When live, send the collected context → receive `{ action_boundary, reason,
+  evidence_maturity, decision_receipt, ... }`.
 
 ## Outputs — and how to act on each
 - `approve` — proceed; record the Decision Receipt ID on the execution.

@@ -62,4 +62,5 @@ calibration accrues over time. Until an outcome resolves, calibration is **hones
 (reported as insufficient sample, never manufactured).
 
 _Phronesis — the decision-assurance layer. Operated by Sustainable Finance Partners, LLC.
-Not investment, legal, or other professional advice; no ratings or guarantees._
+Not investment, legal, or other professional advice; no ratings or guarantees.
+Support: support@phronesisintel.com_

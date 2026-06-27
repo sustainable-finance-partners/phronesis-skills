@@ -57,7 +57,8 @@ Do **not** call for read-only / low-stakes actions (queries, drafts, retrieval).
 - When live, send the collected context → receive `{ action_boundary, reason,
   evidence_maturity, decision_receipt, ... }`.
 
-## Outputs — and how to act on each
+## Outputs — and how to act on each (when live — forthcoming)
+When the tool ships, it will return one of these boundaries:
 - `approve` — proceed; record the Decision Receipt ID on the execution.
 - `review` — pause; route to the human owner with the reason (and diff) before proceeding.
 - `block` — do not proceed; surface the reason.
@@ -88,4 +89,5 @@ time; calibration is honest-empty until outcomes resolve.
 5. Record the Receipt ID; outcome scoring closes the loop.
 
 _Phronesis — the decision-assurance layer. Operated by Sustainable Finance Partners, LLC.
-Not investment, legal, or other professional advice; no ratings or guarantees._
+Not investment, legal, or other professional advice; no ratings or guarantees.
+Support: support@phronesisintel.com_

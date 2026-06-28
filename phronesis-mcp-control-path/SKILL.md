@@ -21,11 +21,6 @@ produce identity or authorization**. It uses the control-path as an input to the
 > A portal or IdP letting the agent **reach** a tool is **access** — not **approval to
 > act**. Pass the control-path so Phronesis can assess whether the action *should* proceed.
 
-> **Availability:** the action-boundary call this context feeds
-> (`phronesis_score_action_boundary`) is **forthcoming — not yet callable**. The live,
-> callable `phronesis-hermes` tools today are `health_check` and `bench_query` (public,
-> read-only). This skill describes the contract so you are ready when it ships.
-
 ## When to use
 Before a consequential action that travels through an MCP server / portal / IdP — collect
 the control-path and include it in the `phronesis-action-boundary` call.
@@ -39,10 +34,9 @@ the control-path and include it in the `phronesis-action-boundary` call.
 - `gateway_routed` · `logs_available` · `policy_snapshot_hash`
 
 ## How to pass it
-When the action-boundary call is live (**forthcoming**), include `control_path_context`
-(and `mcp_portal_context` when an MCP portal is in the path) in the body of the
-`phronesis-action-boundary` call. A more complete control-path → a tighter,
-better-grounded boundary.
+Include `control_path_context` (and `mcp_portal_context` when an MCP portal is in the path)
+in the body of the `phronesis-action-boundary` call. A more complete control-path → a
+tighter, better-grounded boundary.
 
 ## Anti-patterns (do NOT)
 - Do **not** trust client-supplied identity for authorization — only verified principal /

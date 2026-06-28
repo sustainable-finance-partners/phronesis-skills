@@ -14,7 +14,7 @@ Agent-Skills-compatible clients.
   production deploy · data export · vendor selection · binding on a user's behalf), call
   Phronesis for an **auditable action boundary** (`approve / review / block /
   seek-evidence / limit / require-human`) plus a **Decision Receipt**, *before* the action
-  executes. Phronesis never executes the action. *(Scoring tool forthcoming — see MCP endpoint below.)*
+  executes. Phronesis never executes the action.
 - **[`phronesis-decision-receipt`](phronesis-decision-receipt/SKILL.md)** — obtain, record,
   and verify a **Decision Receipt**: the durable, auditable record of a consequential
   decision (the action boundary, the basis it rested on, and a reference for later outcome
@@ -34,10 +34,9 @@ money, or modifies identity; the calling agent and its principal retain the acti
 
 - **For agents:** https://phronesisintel.com/for-agents
 - **MCP discovery manifest:** https://api.phronesisintel.com/.well-known/mcp.json
-- **MCP endpoint:** `https://api.phronesisintel.com/mcp`. Callable today (public,
-  read-only): `health_check`, `bench_query`. Action-boundary scoring
-  (`phronesis_score_action_boundary`, principal-scoped via a free diligence-tier JWT at
-  `/api/v1/signup`) is **forthcoming**.
+- **MCP endpoint:** `https://api.phronesisintel.com/mcp`. Public, read-only:
+  `health_check`, `bench_query`. The core call — `phronesis_score_action_boundary` — is
+  principal-scoped via a free diligence-tier JWT at `/api/v1/signup`.
 
 Operated by Sustainable Finance Partners, LLC. Not investment, legal, or other
 professional advice; no ratings or guarantees. Support: support@phronesisintel.com

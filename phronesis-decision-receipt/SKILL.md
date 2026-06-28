@@ -19,11 +19,6 @@ decision materiality), with an integrity reference so the decision can be shown 
 It is **not** a guarantee, rating, or advice — it records the basis of the decision,
 not a promise about the result.
 
-> **Availability:** the Decision Receipt is returned by action-boundary scoring
-> (`phronesis_score_action_boundary`), which is **forthcoming — not yet callable**. The
-> live, callable `phronesis-hermes` tools today are `health_check` and `bench_query`
-> (public, read-only). This skill describes the contract so you are ready when it ships.
-
 ## When to use
 - After any consequential action bounded via `phronesis-action-boundary` — capture and
   store the receipt.
@@ -38,11 +33,10 @@ not a promise about the result.
 - `outcome` — added later, when the world resolves (honest-empty until then)
 
 ## How to get + verify
-- The receipt is returned alongside the action boundary — **forthcoming** (the
-  action-boundary call is not yet live; MCP server `phronesis-hermes`, principal-scoped;
-  free diligence-tier JWT via `/api/v1/signup`).
+- The receipt is returned alongside the action boundary (MCP server `phronesis-hermes`,
+  principal-scoped; free diligence-tier JWT via `/api/v1/signup`).
 - Verify integrity via its reference / hash (Proof of Decision). Public benchmark surface
-  available now for orientation: `GET https://api.phronesisintel.com/.well-known/bench.json`.
+  for orientation: `GET https://api.phronesisintel.com/.well-known/bench.json`.
 
 ## Bind it to the execution
 - Write the `decision_receipt` ID to your execution / audit log — **one receipt per

@@ -1,42 +1,60 @@
 # phronesis-skills
 
-Agent Skills for **Phronesis** — the decision-assurance layer for AI agents.
+Agent Skills for **Phronesis — the decision-assurance layer for AI agents.**
 
-Each skill follows the **Agent Skills** standard: a `SKILL.md` with a `name` and a
-`description` (the `description` is the trigger — the agent loads the skill when the
-context matches). They work in Claude Code, Codex, Cursor, OpenCode, and other
-Agent-Skills-compatible clients.
+Before an autonomous agent takes a consequential action — moving money, changing
+access, altering security/infra config, deploying, exporting data, accepting terms,
+or binding on a user's behalf — it should be able to get a **defensible, auditable
+action boundary** and a **Decision Receipt**. These skills teach an agent *when* and
+*how* to call Phronesis for exactly that.
 
-## Skills
+**Phronesis evaluates; it never executes.** The calling agent (or its rails) retains
+the action. Outputs are decision-assurance, not advice, ratings, or guarantees;
+calibration is reported honest-empty until outcomes resolve.
 
-- **[`phronesis-action-boundary`](phronesis-action-boundary/SKILL.md)** — before a
-  consequential autonomous action (money · identity/access · security or infra config ·
-  production deploy · data export · vendor selection · binding on a user's behalf), call
-  Phronesis for an **auditable action boundary** (`approve / review / block /
-  seek-evidence / limit / require-human`) plus a **Decision Receipt**, *before* the action
-  executes. Phronesis never executes the action.
-- **[`phronesis-decision-receipt`](phronesis-decision-receipt/SKILL.md)** — obtain, record,
-  and verify a **Decision Receipt**: the durable, auditable record of a consequential
-  decision (the action boundary, the basis it rested on, and a reference for later outcome
-  scoring). A Decision Receipt records the decision basis — it is not a guarantee of outcome.
-- **[`phronesis-mcp-control-path`](phronesis-mcp-control-path/SKILL.md)** — when an agent
-  operates through an MCP server, MCP portal, or identity provider, collect the
-  **control-path context** (verified identity, MCP/portal + tool, policy result, credential
-  scope, gateway/logs) to pass into the action-boundary call. Phronesis *consumes* this
-  context — it does not authenticate or authorize. *Valid access is not approval to act.*
+## The skills
 
-## About Phronesis
+| Skill | The moment it covers |
+|---|---|
+| `phronesis-action-boundary` | the general call — before any consequential action |
+| `phronesis-decision-receipt` | the proof — record and verify the auditable receipt |
+| `phronesis-mcp-control-path` | the input — pass verified control-path; *access ≠ assurance* |
+| `phronesis-agentic-money` | money moves — *can-pay ≠ should-pay*; Phronesis never moves it |
+| `phronesis-change-assurance` | a config/deploy/migration change — *generated ≠ safe*; never applies it |
 
-The neutral substrate an agent calls **before it acts** — turning intent, evidence, and a
-calibrated forecast into an auditable Decision Asset with an action boundary and a
-verifiable Decision Receipt. It is advisory/assurance: it never executes, binds, moves
-money, or modifies identity; the calling agent and its principal retain the action.
+## Install / load
 
-- **For agents:** https://phronesisintel.com/for-agents
-- **MCP discovery manifest:** https://api.phronesisintel.com/.well-known/mcp.json
-- **MCP endpoint:** `https://api.phronesisintel.com/mcp`. Public, read-only:
-  `health_check`, `bench_query`. The core call — `phronesis_score_action_boundary` — is
-  principal-scoped via a free diligence-tier JWT at `/api/v1/signup`.
+These follow the **Agent Skills** standard (`SKILL.md` with `name` + `description`
+frontmatter). They load in any agent that reads skills from a directory or repo
+(Claude Code, Codex, Cursor, OpenCode, and compatible runtimes).
 
-Operated by Sustainable Finance Partners, LLC. Not investment, legal, or other
-professional advice; no ratings or guarantees. Support: support@phronesisintel.com
+- **Whole set:** clone this repo into your agent's skills directory.
+- **One skill:** copy the relevant `*/SKILL.md` into your skills directory.
+
+The agent loads each skill's `description` and decides when it applies; no
+configuration required to read them.
+
+## Calling Phronesis
+
+The skills call the **`phronesis-hermes`** MCP server.
+
+- **MCP Registry:** `com.phronesisintel/phronesis-hermes` (Anthropic MCP Registry)
+- **Endpoint:** `https://api.phronesisintel.com/mcp`
+- **Public, read-only (no key):** `health_check`, `bench_query`
+- **Core call (principal-scoped):** `phronesis_score_action_boundary` —
+  free diligence-tier JWT via `https://api.phronesisintel.com/api/v1/signup`
+
+## Honest scope
+
+Phronesis is the **decision-assurance layer**: it returns a defensible action
+boundary and a verifiable receipt, and scores outcomes over time. It is **not**
+advice, a rating, a recommendation, a guarantee, or a creditworthiness assessment;
+it **never executes** the action and **never moves money or applies changes**.
+
+## Learn more
+
+- Website: https://phronesisintel.com
+- For agents (machine-readable): https://phronesisintel.com/for-agents
+- Contact: support@phronesisintel.com
+
+_Operated by Sustainable Finance Partners, LLC._

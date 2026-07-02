@@ -55,6 +55,13 @@ Every money action should carry its `decision_receipt` ID, written to your execu
 audit log (see `phronesis-decision-receipt`). Outcomes are scored over time;
 calibration is honest-empty until they resolve.
 
+## Working directory (`.phronesis/`)
+Keep the money-move's trail per the repo convention
+([phronesis-working-directory.md](../phronesis-working-directory.md)):
+`decision_requirement.md` (incl. the payment + mandate context),
+`action_boundary_request.json`, `decision_receipt.json` (verbatim), `review_log.md` on
+`review`/`require_human`, `outcome_followup.md` when the transfer settles.
+
 ## The pattern: propose → assure → review → execute → record
 Propose the payment + context → call Phronesis → action boundary + Receipt → human
 review if `review`/`require_human` → the agent or rail executes (**Phronesis never

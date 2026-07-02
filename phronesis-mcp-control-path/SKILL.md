@@ -38,6 +38,11 @@ Include `control_path_context` (and `mcp_portal_context` when an MCP portal is i
 in the body of the `phronesis-action-boundary` call. A more complete control-path → a
 tighter, better-grounded boundary.
 
+## Working directory (`.phronesis/`)
+Record the collected control-path snapshot in `.phronesis/<task-slug>/evidence_notes.md`
+alongside the evidence it grounds
+([phronesis-working-directory.md](../phronesis-working-directory.md)).
+
 ## Anti-patterns (do NOT)
 - Do **not** trust client-supplied identity for authorization — only verified principal /
   control-path context.

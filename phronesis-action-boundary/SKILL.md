@@ -75,6 +75,13 @@ Every executed consequential action should carry its `decision_receipt` ID, writ
 your execution / audit log, so the decision is provable later. Outcomes are scored over
 time; calibration is honest-empty until outcomes resolve.
 
+## Working directory (`.phronesis/`)
+Keep this task's assurance trail per the repo convention
+([phronesis-working-directory.md](../phronesis-working-directory.md)):
+`decision_requirement.md` before the call; `action_boundary_request.json` +
+`decision_receipt.json` (verbatim) at the call; `review_log.md` when the boundary routes
+to a human; `outcome_followup.md` when the outcome resolves.
+
 ## The pattern: propose → assure → review → execute → record
 1. Propose the action and collect context.
 2. Call Phronesis → action boundary + Decision Receipt.

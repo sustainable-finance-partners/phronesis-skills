@@ -43,6 +43,12 @@ not a promise about the result.
   consequential action**.
 - Keep it: it is the artifact that proves the decision later.
 
+## Working directory (`.phronesis/`)
+Store the receipt verbatim at `.phronesis/<task-slug>/decision_receipt.json`, and add
+`outcome_followup.md` when the outcome resolves
+([phronesis-working-directory.md](../phronesis-working-directory.md)) — the durable home
+the audit trail is read from later.
+
 ## Anti-patterns (do NOT)
 - Do **not** execute a high-risk action without capturing its receipt.
 - Do **not** treat a receipt as a guarantee of outcome — it records the decision basis,

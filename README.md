@@ -44,6 +44,14 @@ The skills call the **`phronesis-hermes`** MCP server.
 - **Core call (principal-scoped):** `phronesis_score_action_boundary` —
   free diligence-tier JWT via `https://api.phronesisintel.com/api/v1/signup`
 
+## Working directory (`.phronesis/`)
+
+Each skill keeps a per-task assurance trail in a `.phronesis/<task-slug>/` directory —
+requirement → evidence notes → boundary request → receipt → review log → outcome
+follow-up — so the task can be audited afterward. Agent-side only; receipts stay
+verifiable against Phronesis either way. Convention:
+[phronesis-working-directory.md](phronesis-working-directory.md).
+
 ## Honest scope
 
 Phronesis is the **decision-assurance layer**: it returns a defensible action

@@ -49,6 +49,14 @@ production deploys · PR merges · dependency acceptance · data exports · vend
 - Do **not** skip human review for high-blast-radius or irreversible changes.
 - Do **not** apply without control-path context; do **not** trust client-supplied identity.
 
+## Working directory (`.phronesis/`)
+Keep the change's trail per the repo convention
+([phronesis-working-directory.md](../phronesis-working-directory.md)):
+`decision_requirement.md` + `evidence_notes.md` (diff, blast radius, rollback, analysis
+outputs), `action_boundary_request.json`, `decision_receipt.json` (verbatim),
+`review_log.md` on `review`/`stage_only`/`require_human`, `outcome_followup.md` after the
+change lands.
+
 ## Review-before-apply (the pattern)
 Propose the change + context → call Phronesis → action boundary + Receipt → human review
 if `review`/`stage_only`/`require_human` → your tool applies it (**Phronesis never
